@@ -1,19 +1,22 @@
 package com.campus.model;
-    //encapsulated class for Student
+
+// Encapsulated class for Student
 public class Student {
     private int studentid;
     private String studentname;
     private int age;
     private String department;
-    private int[] marks; 
+    private int[] marks;
 
     // Static variable to keep track of the number of students
     static int studentCount = 0;
+
     // Default constructor
     public Student() {
         studentCount++;
     }
-// Parameterized constructor
+
+    // Parameterized constructor
     public Student(int studentid, String studentname, int age, String department, int[] marks) {
         this.studentid = studentid;
         this.studentname = studentname;
@@ -22,7 +25,8 @@ public class Student {
         this.marks = marks;
         studentCount++;
     }
-    //getters
+
+    // getters
     public int getStudentid() {
         return studentid;
     }
@@ -47,9 +51,9 @@ public class Student {
         return studentCount;
     }
 
-    //setters
+    // setters
     public void setStudentid(int studentid) {
-        this.studentid = studentid; 
+        this.studentid = studentid;
     }
 
     public void setStudentname(String studentname) {
@@ -67,6 +71,7 @@ public class Student {
     public void setMarks(int[] marks) {
         this.marks = marks;
     }
+
     // instance methods
     public void displayStudentInfo() {
         System.out.println("Student ID: " + studentid);
@@ -74,18 +79,20 @@ public class Student {
         System.out.println("Age: " + age);
         System.out.println("Department: " + department);
     }
-    public void displayStudentInfo(boolean showmarks){
+
+    public void displayStudentInfo(boolean showmarks) {
         displayStudentInfo();
         if (showmarks) {
             System.out.println("Marks: " + java.util.Arrays.toString(marks));
-
         }
     }
 
-    //Static methods belonging to the class
-    public static void displayStudentCount() {
-        System.out.println("Total number of students: " + studentCount);    
-    
-}
+    public void studentType() {
+        System.out.println("Student Type: Regular Student");
+    }
 
+    // static method belonging to the class rather than the object
+    public static void displayStudentCount() {
+        System.out.println("Total number of students: " + studentCount);
+    }
 }
